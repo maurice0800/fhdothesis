@@ -1,7 +1,7 @@
-\ProvidesClass{tudothesis}[2015/08/31 v0.9 wrapper to scrbook for thesis at TUDo]
+\ProvidesClass{fhdothesis}[2015/08/31 v0.9 wrapper to scrbook for thesis at TUDo]
 % Option for tu colors:
-\newif\if@tucolor\@tucolorfalse
-\DeclareOption{tucolor}{\@tucolortrue}
+\newif\if@fhcolor\@fhcolorfalse
+\DeclareOption{fhcolor}{\@fhcolortrue}
 
 % All other Options go to KOMA-Script
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{scrbook}}
@@ -18,36 +18,36 @@
 ]{scrbook}
 
 
-% Define our beloved tu colour:
+% Define our beloved fh colour:
 \RequirePackage{xcolor}
-\xdefinecolor{tugreen}{RGB}{132, 184, 25}
+\xdefinecolor{fhorange}{RGB}{245, 85, 0}
 
 \RequirePackage{caption}
 \RequirePackage{subcaption}
 
-% add some Color to structural elements if option tucolor was given
+% add some Color to structural elements if option fhcolor was given
 \RequirePackage{scrlayer-scrpage}
 \pagestyle{scrheadings}
 
 \KOMAoption{headsepline}{0.5pt}
-\if@tucolor%
-  \addtokomafont{title}{\color{tugreen}}          % title on titlepage
-  \addtokomafont{chapter}{\color{tugreen}}     % headlines of the chapters, sections etc. 
-  \setkomafont{headsepline}{\color{tugreen}}        % line between header and text body
-  \DeclareCaptionFont{tugreen}{\color{tugreen}}
+\if@fhcolor%
+  \addtokomafont{title}{\color{fhorange}}          % title on titlepage
+  \addtokomafont{chapter}{\color{fhorange}}     % headlines of the chapters, sections etc. 
+  \setkomafont{headsepline}{\color{fhorange}}        % line between header and text body
+  \DeclareCaptionFont{fhorange}{\color{fhorange}}
   \captionsetup{%
-              labelfont={bf,tugreen},     % bold label in tu colour
-              format=plain,               % no indentation under the label
-              width=0.9\textwidth,        % slightly smaller width than text
-              font=small,                 % font slightly smaller than text
-            }
+    labelfont={bf,fhorange},     % bold label in tu colour
+    format=plain,               % no indentation under the label
+    width=0.9\textwidth,        % slightly smaller width than text
+    font=small,                 % font slightly smaller than text
+  }
 \else
   \captionsetup{%
-              labelfont=bf,               % bold label
-              format=plain,               % no indentation under the label
-              width=0.9\textwidth,        % slightly smaller width than text
-              font=small,                 % font slightly smaller than text
-            }
+    labelfont=bf,               % bold label
+    format=plain,               % no indentation under the label
+    width=0.9\textwidth,        % slightly smaller width than text
+    font=small,                 % font slightly smaller than text
+  }
 \fi
 
 % equation numbers of form chapter.equationnumber
@@ -86,9 +86,9 @@
   \thispagestyle{empty}
   \vspace*{\fill}
   \begin{tabular}{@{}l@{\hspace{2em}}l@{}}
-      Erstgutachter:  & \thefirstcorrector \\
-      Zweitgutachter: & \thesecondcorrector \\
-      Abgabedatum:    & \thesubmissiondate
+    Erstgutachter:  & \thefirstcorrector  \\
+    Zweitgutachter: & \thesecondcorrector \\
+    Abgabedatum:    & \thesubmissiondate
   \end{tabular}
   \newpage
 }
