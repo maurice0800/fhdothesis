@@ -1,6 +1,6 @@
 # TUDoThesis [![Build Thesis](https://github.com/maxnoe/tudothesis/actions/workflows/build.yml/badge.svg)](https://github.com/maxnoe/tudothesis/actions/workflows/build.yml)
 
-LaTeX class file and template for a thesis written at TU Dortmund
+LaTeX class file and template for a thesis written at Fachhochschule Dortmund. Forked from maxnoe/tudothesis and adjusted to Fachhochschule Dortmund.
 
 The template is build for use with _lualatex_ and _biblatex_ with _biber_,
 the class file can be used with the LaTeX engine of your choice, it is completely independent.
